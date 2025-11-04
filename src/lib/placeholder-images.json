@@ -1,0 +1,502 @@
+{
+  "placeholderImages": [
+    {
+      "id": "about-hero",
+      "description": "Team of diverse professionals in a meeting",
+      "imageUrl": "https://images.unsplash.com/photo-1709715357510-b687304cee3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NjE5MzQ3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "our-story",
+      "description": "Two people working together in a creative startup environment",
+      "imageUrl": "https://images.unsplash.com/photo-1573497491208-6b1acb260507?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdGFydHVwJTIwbWVldGluZ3xlbnwwfHx8fDE3NjIyOTU3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup meeting"
+    },
+    {
+      "id": "service-business-",
+      "description": "Close-up of code on a screen",
+      "imageUrl": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2MTk0NTM2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "service-custom-web",
+      "description": "A developer planning on a whiteboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+      "imageHint": "developer planning"
+    },
+    {
+      "id": "service-ecommerce-",
+      "description": "Online shopping interface with credit card.",
+      "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageHint": "online shopping"
+    },
+    {
+      "id": "service-startup-mv",
+      "description": "A rocket launching, symbolizing a startup.",
+      "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120&q=80",
+      "imageHint": "startup launch"
+    },
+    {
+      "id": "service-seo-optimi",
+      "description": "Chart showing upward trend",
+      "imageUrl": "https://images.unsplash.com/photo-1577563682708-4f022ec774fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxncm93dGglMjBjaGFydHxlbnwwfHx8fDE3NjE5ODkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "growth chart"
+    },
+    {
+      "id": "service-ppc-advert",
+      "description": "Social media interface on a phone",
+      "imageUrl": "https://images.unsplash.com/photo-1579869847557-1f67382cc158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzb2NpYWwlMjBtZWRpYXxlbnwwfHx8fDE3NjE5ODUwNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "social media"
+    },
+    {
+      "id": "service-social-med",
+      "description": "Phone showing multiple social media app icons.",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "imageHint": "social apps"
+    },
+    {
+      "id": "service-content-ma",
+      "description": "Person writing in a notebook",
+      "imageUrl": "https://images.unsplash.com/photo-1620136283251-878c03b5206c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d3JpdGluZyUyMG5vdGVib29rfGVufDB8fHx8MTc2MTg5NTgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing notebook"
+    },
+    {
+      "id": "portfolio-1",
+      "description": "Screenshot of a modern e-commerce website",
+      "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZWNvbW1lcmNlJTIwd2Vic2l0ZXxlbnwwfHx8fDE3NjIwMTYxMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "portfolio-2",
+      "description": "Dashboard of an analytics platform",
+      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhbmFseXRpY3MlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzYxOTYwMjg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "analytics dashboard"
+    },
+    {
+      "id": "portfolio-3",
+      "description": "Google search results page",
+      "imageUrl": "https://images.unsplash.com/photo-1477013743164-ffc3a5e556da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzZWFyY2glMjByZXN1bHRzfGVufDB8fHx8MTc2MTk3NDg1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "search results"
+    },
+    {
+      "id": "portfolio-4",
+      "description": "Mobile app interface design",
+      "imageUrl": "https://images.unsplash.com/photo-1761305135230-a626d3c8d0a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YXBwJTIwaW50ZXJmYWNlfGVufDB8fHx8MTc2MTkwOTk4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app interface"
+    },
+    {
+      "id": "portfolio-5",
+      "description": "A modern law office with books.",
+      "imageUrl": "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80",
+      "imageHint": "law office"
+    },
+    {
+      "id": "portfolio-6",
+      "description": "A friendly dentist office interior.",
+      "imageUrl": "https://images.unsplash.com/photo-1629904850871-bb6a3073907c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageHint": "dentist office"
+    },
+    {
+      "id": "blog-1",
+      "description": "Abstract digital art",
+      "imageUrl": "https://images.unsplash.com/photo-1641984790242-d8aa477d306c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc2MjAxMDc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital art"
+    },
+    {
+      "id": "blog-2",
+      "description": "Person working on a laptop in a cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1704770064557-416292d1f4bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXB0b3AlMjBjYWZlfGVufDB8fHx8MTc2MTk0ODM2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "laptop cafe"
+    },
+    {
+      "id": "blog-3",
+      "description": "Neon sign with a motivational quote",
+      "imageUrl": "https://images.unsplash.com/photo-1504805572947-34fad45aed93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZW9uJTIwc2lnbnxlbnwwfHx8fDE3NjIwMTY2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neon sign"
+    },
+    {
+      "id": "blog-4",
+      "description": "A focused developer coding on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1719253479632-61b2fdc77a65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXZlbG9wZXIlMjBjb2Rpbmd8ZW58MHx8fHwxNzYxOTMxMzg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer coding"
+    },
+    {
+      "id": "blog-5",
+      "description": "A person pointing at a website on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageHint": "website screen"
+    },
+    {
+      "id": "blog-6",
+      "description": "A magnifying glass over a computer screen showing code.",
+      "imageUrl": "https://images.unsplash.com/photo-1579403124614-197f69d8187b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzNTV8MHwxfHNlYXJjaHw1fHxjb2RlJTIwcmV2aWV3fGVufDB8fHx8MTY3OTA2OTM4Mnww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "code review"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Portrait of a smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTkwOTQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Portrait of a man with glasses",
+      "imageUrl": "https://images.unsplash.com/photo-1607031542107-f6f46b5d54e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE5OTU4ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Professional headshot of a person",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE5OTA0NjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    },
+    {
+      "id": "avatar-4",
+      "description": "Headshot of a smiling professional woman",
+      "imageUrl": "https://images.unsplash.com/photo-1611432579699-484f7990b127?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGhlYWRzaG90fGVufDB8fHx8MTc2MTkyNjA1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman headshot"
+    },
+    {
+      "id": "avatar-5",
+      "description": "Headshot of a confident man",
+      "imageUrl": "https://images.unsplash.com/photo-1588178454780-441fa5b99fa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE5NTUxOTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man headshot"
+    },
+    {
+      "id": "avatar-6",
+      "description": "Headshot of a creative professional",
+      "imageUrl": "https://images.unsplash.com/photo-1618202680402-45db7b399e0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NjE5MzA4MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "creative professional"
+    },
+    {
+      "id": "avatar-testimonial-1",
+      "description": "Portrait of a confident marketing executive woman",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop",
+      "imageHint": "marketing executive"
+    },
+    {
+      "id": "avatar-testimonial-2",
+      "description": "Portrait of a professional man in a suit",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "avatar-testimonial-3",
+      "description": "Headshot of a male software engineer",
+      "imageUrl": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "software engineer"
+    },
+    {
+      "id": "avatar-testimonial-4",
+      "description": "Headshot of a female entrepreneur",
+      "imageUrl": "https://images.unsplash.com/photo-1554780336-39046235e277?q=80&w=1935&auto=format&fit=crop",
+      "imageHint": "female entrepreneur"
+    },
+    {
+      "id": "avatar-testimonial-5",
+      "description": "Friendly portrait of a male business owner",
+      "imageUrl": "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "business owner"
+    },
+    {
+      "id": "client-logo-1",
+      "description": "Generic tech company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjIwMTY2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "client-logo-2",
+      "description": "Generic startup logo",
+      "imageUrl": "https://images.unsplash.com/photo-1669633971142-99954984ca8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFydHVwJTIwbG9nb3xlbnwwfHx8fDE3NjE5MjY1ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup logo"
+    },
+    {
+      "id": "client-logo-3",
+      "description": "Generic e-commerce logo",
+      "imageUrl": "https://images.unsplash.com/photo-1761044591049-5d549416a5df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlY29tbWVyY2UlMjBsb2dvfGVufDB8fHx8MTc2MjAwNzAwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce logo"
+    },
+    {
+      "id": "client-logo-4",
+      "description": "Generic finance company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1693801874720-05ae2c89ede1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmaW5hbmNlJTIwbG9nb3xlbnwwfHx8fDE3NjE5ODAxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "finance logo"
+    },
+    {
+      "id": "client-logo-5",
+      "description": "Generic health brand logo",
+      "imageUrl": "https://images.unsplash.com/photo-1655565637301-8485235271ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZWFsdGglMjBsb2dvfGVufDB8fHx8MTc2MTkzNTYyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "health logo"
+    },
+    {
+      "id": "client-logo-6",
+      "description": "Generic travel company logo",
+      "imageUrl": "https://images.unsplash.com/photo-1697725077369-62bea3a8cb8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZWwlMjBsb2dvfGVufDB8fHx8MTc2MjAxNjYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "travel logo"
+    },
+    {
+      "id": "not-found",
+      "description": "A lost person looking at a map",
+      "imageUrl": "https://images.unsplash.com/photo-1495249346844-83e18c90a511?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb3N0JTIwbWFwfGVufDB8fHx8MTc2MjAxNjYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lost map"
+    },
+    {
+      "id": "service-image-1",
+      "description": "A modern office space with laptops on desks, signifying business websites.",
+      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "business office"
+    },
+    {
+      "id": "service-image-1-2",
+      "description": "A person's hands typing on a laptop keyboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "laptop typing"
+    },
+    {
+      "id": "service-image-1-3",
+      "description": "A clean and modern website layout displayed on a monitor.",
+      "imageUrl": "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop",
+      "imageHint": "website layout"
+    },
+    {
+      "id": "service-image-2",
+      "description": "A developer collaborating with a colleague, pointing at code on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "web application"
+    },
+    {
+      "id": "service-image-2-2",
+      "description": "Flowchart and diagrams on a whiteboard representing application architecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "architecture planning"
+    },
+    {
+      "id": "service-image-2-3",
+      "description": "Close up of complex database schema diagram.",
+      "imageUrl": "https://images.unsplash.com/photo-1589170284481-4d40b8f02f9e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "database schema"
+    },
+    {
+      "id": "service-image-3",
+      "description": "A sleek, modern e-commerce website displayed on a laptop screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "service-image-3-2",
+      "description": "A person making a purchase online with a credit card.",
+      "imageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "online purchase"
+    },
+    {
+      "id": "service-image-3-3",
+      "description": "A shopping cart icon glowing on a digital screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1580974928045-83452317122f?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "shopping cart"
+    },
+    {
+      "id": "service-image-4",
+      "description": "A lightbulb made of glowing circuitry, symbolizing a new tech idea.",
+      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "startup idea"
+    },
+    {
+      "id": "service-image-4-2",
+      "description": "A group of young entrepreneurs collaborating around a table.",
+      "imageUrl": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "startup team"
+    },
+    {
+      "id": "service-image-4-3",
+      "description": "A simple wireframe sketch of a mobile app.",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "app wireframe"
+    },
+    {
+      "id": "service-image-5",
+      "description": "A modern house with a for sale sign, representing real estate.",
+      "imageUrl": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop",
+      "imageHint": "real estate"
+    },
+    {
+      "id": "service-image-5-2",
+      "description": "An aerial view of a suburban neighborhood.",
+      "imageUrl": "https://images.unsplash.com/photo-1582493325888-2ff041355529?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "neighborhood aerial"
+    },
+    {
+      "id": "service-image-5-3",
+      "description": "A real estate agent handing keys to a new homeowner.",
+      "imageUrl": "https://images.unsplash.com/photo-1581287162985-1e3d36b1e0a2?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "real estate agent"
+    },
+    {
+      "id": "service-image-6",
+      "description": "A university campus building with students walking by.",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "college campus"
+    },
+    {
+      "id": "service-image-6-2",
+      "description": "A lecture hall filled with students.",
+      "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "lecture hall"
+    },
+    {
+      "id": "service-image-6-3",
+      "description": "A stack of textbooks on a desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "textbooks desk"
+    },
+    {
+      "id": "service-image-7",
+      "description": "A doctor using a tablet computer in a modern clinic.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "healthcare technology"
+    },
+    {
+      "id": "service-image-7-2",
+      "description": "A close-up of a stethoscope on a medical chart.",
+      "imageUrl": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "medical equipment"
+    },
+    {
+      "id": "service-image-7-3",
+      "description": "A clean, modern hospital waiting room.",
+      "imageUrl": "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1932&auto=format&fit=crop",
+      "imageHint": "hospital waiting"
+    },
+    {
+      "id": "service-image-8",
+      "description": "A minimalist and artistic personal portfolio website on a tablet.",
+      "imageUrl": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "personal portfolio"
+    },
+    {
+      "id": "service-image-8-2",
+      "description": "A photographer's camera on a desk with edited photos in the background.",
+      "imageUrl": "https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "photographer desk"
+    },
+    {
+      "id": "service-image-8-3",
+      "description": "A graphic designer sketching on a digital tablet.",
+      "imageUrl": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "designer sketching"
+    },
+    {
+      "id": "service-image-9",
+      "description": "An arrow hitting the center of a target, symbolizing conversion.",
+      "imageUrl": "https://images.unsplash.com/photo-1550536448-9f1e9c56f70a?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "landing page"
+    },
+    {
+      "id": "service-image-9-2",
+      "description": "A simple and clean landing page design on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1516131206173-684961a432db?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "clean design"
+    },
+    {
+      "id": "service-image-9-3",
+      "description": "A large 'Sign Up Now' button on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1506784983877-45594efa4c85?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "call action"
+    },
+    {
+      "id": "service-image-10",
+      "description": "A magnifying glass over a keyword map, representing SEO research.",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-16954405a255?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "seo research"
+    },
+    {
+      "id": "service-image-10-2",
+      "description": "A graph showing upward trending analytics data on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop",
+      "imageHint": "analytics data"
+    },
+    {
+      "id": "service-image-10-3",
+      "description": "A person looking at a Google search results page.",
+      "imageUrl": "https://images.unsplash.com/photo-1516900448138-898708f36c83?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "search results"
+    },
+    {
+      "id": "service-image-11",
+      "description": "A person clicking on a paid search ad on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1599658880111-35c6fab47a69?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "ppc advertising"
+    },
+    {
+      "id": "service-image-11-2",
+      "description": "Facebook and Instagram ads displayed on a mobile phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1611162616805-6a406bde6858?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "social ads"
+    },
+    {
+      "id": "service-image-11-3",
+      "description": "A dashboard showing ad campaign performance metrics.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "campaign dashboard"
+    },
+    {
+      "id": "service-image-12",
+      "description": "A grid of social media profile pictures, showing community.",
+      "imageUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop",
+      "imageHint": "social community"
+    },
+    {
+      "id": "service-image-12-2",
+      "description": "A person scrolling through an Instagram feed on their phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1589156280159-24542a22525e?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "instagram feed"
+    },
+    {
+      "id": "service-image-12-3",
+      "description": "Like and heart icons floating over a mobile phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "social engagement"
+    },
+    {
+      "id": "service-image-13",
+      "description": "A person writing content on a vintage typewriter.",
+      "imageUrl": "https://images.unsplash.com/photo-1520638023360-6126f239f52b?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "content creation"
+    },
+    {
+      "id": "service-image-13-2",
+      "description": "A collection of blog post titles on a website.",
+      "imageUrl": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "blog posts"
+    },
+    {
+      "id": "service-image-13-3",
+      "description": "An infographic showing data and statistics.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data infographic"
+    },
+    {
+      "id": "case-study-15-1",
+      "description": "Mobile app showing fitness tracking screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwYXBwfGVufDB8fHx8MTc2MjE5NTM0OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness app"
+    },
+    {
+      "id": "case-study-15-2",
+      "description": "Close up of a mobile phone with a fitness app open.",
+      "imageUrl": "https://images.unsplash.com/photo-1626252346582-c7721d805e0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2JpbGUlMjBmaXRuZXNzfGVufDB8fHx8MTc2MjI1NDU0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile fitness"
+    },
+    {
+      "id": "case-study-16-1",
+      "description": "Clean interface of a task manager app on a phone.",
+      "imageUrl": "https://images.unsplash.com/photo-1570649236495-42fa5fe5c48b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0YXNrJTIwbWFuYWdlcnxlbnwwfHx8fDE3NjIyNTQ1NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "task manager"
+    },
+    {
+      "id": "case-study-16-2",
+      "description": "A person using a productivity app on their smartphone.",
+      "imageUrl": "https://images.unsplash.com/photo-1758786977080-a5e60a3f843c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9kdWN0aXZpdHklMjBhcHB8ZW58MHx8fHwxNzYyMTY0Mjc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "productivity app"
+    }
+  ]
+}

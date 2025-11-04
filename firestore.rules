@@ -1,0 +1,78 @@
+/**
+ * @fileoverview Firestore Security Rules for the application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model.  Each user can only access their own data,
+ * and password reset tokens are isolated within each user's subcollection.
+ *
+ * Data Structure:
+ * - /users/{userId}: Stores user profile information. Only the authenticated user can read/write their own document.
+ * - /users/{userId}/passwordResetTokens/{passwordResetTokenId}: Stores password reset tokens for each user. Only the authenticated user can manage their own tokens.
+ *
+ * Key Security Decisions:
+ * - User listing is disallowed.
+ * - No admin roles are currently implemented; all authorization is based on user ownership.
+ *
+ * Denormalization for Authorization:
+ * - The `userId` is embedded within the `/users/{userId}` path itself, allowing simple `isOwner(userId)` checks.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Allows users to read and write their own user document.
+     * @path /users/{userId}
+     * @allow (get, create, update, delete) if request.auth.uid == userId
+     * @deny (get, create, update, delete) if request.auth.uid != userId
+     * @principle Enforces document ownership for writes.
+     */
+    match /users/{userId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner(userId) {
+        return isSignedIn() && request.auth.uid == userId;
+      }
+
+      function isExistingOwner(userId) {
+          return isOwner(userId) && resource != null;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if false; // User listing is not allowed.
+      allow create: if isOwner(userId) && request.resource.data.id == request.auth.uid;
+      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id; //Enforce immutability of userId
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Allows users to manage their own password reset tokens.
+     * @path /users/{userId}/passwordResetTokens/{passwordResetTokenId}
+     * @allow (get, create, update, delete, list) if request.auth.uid == userId
+     * @deny (get, create, update, delete, list) if request.auth.uid != userId
+     * @principle Restricts access to a user's own password reset tokens.
+     */
+    match /users/{userId}/passwordResetTokens/{passwordResetTokenId} {
+
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner(userId) {
+        return isSignedIn() && request.auth.uid == userId;
+      }
+
+      function isExistingOwner(userId) {
+          return isOwner(userId) && resource != null;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId);
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+  }
+}

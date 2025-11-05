@@ -22,7 +22,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-   type CarouselApi,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -38,7 +38,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 
 export default function Home() {
-  const featuredServices = services.filter(s => 
+  const featuredServices = services.filter(s =>
     ['business-website-development', 'portfolio-personal-branding-websites', 'ppc-advertising', 'seo-optimization'].includes(s.id)
   );
   const cardVariants = {
@@ -49,7 +49,7 @@ export default function Home() {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   )
-  
+
   const duplicatedClients = [...clients, ...clients];
 
   const [testimonialApi, setTestimonialApi] = React.useState<CarouselApi>()
@@ -59,14 +59,14 @@ export default function Home() {
     if (!testimonialApi) {
       return
     }
- 
+
     const onSelect = (api: CarouselApi) => {
       setCurrentTestimonial(api.selectedScrollSnap())
     }
 
     testimonialApi.on("select", onSelect)
     onSelect(testimonialApi); // Set initial state
- 
+
     return () => {
       testimonialApi.off("select", onSelect)
     }
@@ -161,8 +161,9 @@ export default function Home() {
                   <Card
                     className={cn("group overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover h-full flex flex-col")}
                   >
-                     <Carousel 
-                        className="w-full" 
+                    <LoadingLink href={`/services/${service.slug}`}>
+                      <Carousel
+                        className="w-full"
                         plugins={[
                           Autoplay({
                             delay: 2000 + Math.random() * 1000,
@@ -171,27 +172,28 @@ export default function Home() {
                         ]}
                         opts={{ loop: true }}
                       >
-                      <CarouselContent>
+                        <CarouselContent>
                           {serviceImages.length > 0 ? serviceImages.map((img, index) => (
-                              <CarouselItem key={index}>
-                                  <div className="aspect-video relative overflow-hidden">
-                                  <Image
-                                      src={img!.imageUrl}
-                                      alt={img!.description}
-                                      fill
-                                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                      data-ai-hint={img!.imageHint}
-                                  />
-                                  </div>
-                              </CarouselItem>
+                            <CarouselItem key={index}>
+                              <div className="aspect-video relative overflow-hidden">
+                                <Image
+                                  src={img!.imageUrl}
+                                  alt={img!.description}
+                                  fill
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                  data-ai-hint={img!.imageHint}
+                                />
+                              </div>
+                            </CarouselItem>
                           )) : (
-                                <CarouselItem>
-                                  <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                  </div>
-                              </CarouselItem>
+                            <CarouselItem>
+                              <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                              </div>
+                            </CarouselItem>
                           )}
-                      </CarouselContent>
-                    </Carousel>
+                        </CarouselContent>
+                      </Carousel>
+                    </LoadingLink>
                     <CardHeader className="items-center text-center">
                       <CardTitle className="font-headline text-xl">
                         {service.title}
@@ -220,34 +222,34 @@ export default function Home() {
       {/* Client Logos Section */}
       <section className="py-16 bg-secondary/50 dark:bg-secondary/20">
         <div className="container mx-auto px-4">
-            <h3 className="mb-8 text-center text-base font-semibold text-muted-foreground">
-                Trusted by leading companies worldwide
-            </h3>
-            <div
-                className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
-                >
-                <div className="flex animate-scroll group-hover:[animation-play-state:paused]">
-                    {duplicatedClients.map((client, index) => {
-                        const clientImage = placeholderImages.find(p => p.id === client.imageId);
-                        return (
-                            <div key={`${client.id}-${index}`} className="flex-shrink-0 w-1/2 sm:w-1/4 md:w-1/6 p-4">
-                                {clientImage && (
-                                    <Image
-                                        src={clientImage.imageUrl}
-                                        alt={client.name}
-                                        width={150}
-                                        height={50}
-                                        className="object-contain h-10 w-auto mx-auto grayscale transition-all hover:grayscale-0"
-                                        data-ai-hint={clientImage.imageHint}
-                                    />
-                                )}
-                            </div>
-                        );
-                    })}
-                </div>
+          <h3 className="mb-8 text-center text-base font-semibold text-muted-foreground">
+            Trusted by leading companies worldwide
+          </h3>
+          <div
+            className="group relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
+          >
+            <div className="flex animate-scroll group-hover:[animation-play-state:paused]">
+              {duplicatedClients.map((client, index) => {
+                const clientImage = placeholderImages.find(p => p.id === client.imageId);
+                return (
+                  <div key={`${client.id}-${index}`} className="flex-shrink-0 w-1/2 sm:w-1/4 md:w-1/6 p-4">
+                    {clientImage && (
+                      <Image
+                        src={clientImage.imageUrl}
+                        alt={client.name}
+                        width={150}
+                        height={50}
+                        className="object-contain h-10 w-auto mx-auto grayscale transition-all hover:grayscale-0"
+                        data-ai-hint={clientImage.imageHint}
+                      />
+                    )}
+                  </div>
+                );
+              })}
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
       {/* Testimonials Section */}
       <section className="bg-background py-16 sm:py-24 overflow-hidden">
@@ -262,55 +264,56 @@ export default function Home() {
             setApi={setTestimonialApi}
             plugins={[plugin.current]}
             className="w-full max-w-6xl mx-auto"
-            opts={{ 
+            opts={{
               loop: true,
               align: 'center',
             }}
           >
             <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => {
-                 const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
-                 const isActive = index === currentTestimonial;
+                const avatarImage = placeholderImages.find(p => p.id === testimonial.avatarId);
+                const isActive = index === currentTestimonial;
                 return (
-                 <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <motion.div 
-                        className="h-full p-1"
-                        animate={{ 
-                            scale: isActive ? 1 : 0.85,
-                            opacity: isActive ? 1 : 0.5,
-                        }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  <CarouselItem key={testimonial.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <motion.div
+                      className="h-full p-1"
+                      animate={{
+                        scale: isActive ? 1 : 0.85,
+                        opacity: isActive ? 1 : 0.5,
+                      }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     >
                       <div className="testimonial-card">
-                          <div className="testimonial-card-content">
-                            {avatarImage && (
-                                <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 testimonial-avatar">
-                                    <Image
-                                        src={avatarImage.imageUrl}
-                                        alt={testimonial.name}
-                                        fill
-                                        className="object-cover"
-                                        data-ai-hint={avatarImage.imageHint}
-                                    />
-                                </div>
-                            )}
-                            <Quote className="absolute top-6 left-6 w-10 h-10 text-primary/10" />
-                            <p className="text-muted-foreground text-center italic mb-6 text-sm sm:text-base">
-                                &quot;{testimonial.quote}&quot;
-                            </p>
-                            <div className="text-center">
-                                <p className="font-bold font-headline text-lg text-foreground">{testimonial.name}</p>
-                                <p className="text-xs text-primary">{testimonial.title}</p>
+                        <div className="testimonial-card-content">
+                          {avatarImage && (
+                            <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 testimonial-avatar">
+                              <Image
+                                src={avatarImage.imageUrl}
+                                alt={testimonial.name}
+                                fill
+                                className="object-cover"
+                                data-ai-hint={avatarImage.imageHint}
+                              />
                             </div>
+                          )}
+                          <Quote className="absolute top-6 left-6 w-10 h-10 text-primary/10" />
+                          <p className="text-muted-foreground text-center italic mb-6 text-sm sm:text-base">
+                            &quot;{testimonial.quote}&quot;
+                          </p>
+                          <div className="text-center">
+                            <p className="font-bold font-headline text-lg text-foreground">{testimonial.name}</p>
+                            <p className="text-xs text-primary">{testimonial.title}</p>
                           </div>
+                        </div>
                       </div>
                     </motion.div>
-                </CarouselItem>
-              )})}
+                  </CarouselItem>
+                )
+              })}
             </CarouselContent>
-             <div className="hidden sm:block">
-                <CarouselPrevious className="-left-4 sm:-left-8 md:-left-12" />
-                <CarouselNext className="-right-4 sm:-right-8 md:-right-12" />
+            <div className="hidden sm:block">
+              <CarouselPrevious className="-left-4 sm:-left-8 md:-left-12" />
+              <CarouselNext className="-right-4 sm:-right-8 md:-right-12" />
             </div>
           </Carousel>
         </div>
@@ -332,51 +335,52 @@ export default function Home() {
             {blogPosts.slice(0, 3).map((post, i) => {
               const blogImage = placeholderImages.find(p => p.id === post.imageId);
               return (
-              <motion.div
-                key={post.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex"
-              >
-                <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full flex flex-col")}>
-                    <LoadingLink href={`/blog/${post.slug}`} className="block flex flex-col h-full">
-                        <div className="aspect-video relative">
-                          {blogImage && <Image
-                            src={blogImage.imageUrl}
-                            alt={post.title}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={blogImage.imageHint}
-                          />}
-                        </div>
-                        <CardHeader>
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <span>{post.date}</span>
-                            <span>&bull;</span>
-                            <span>{post.readTime}</span>
-                          </div>
-                          <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
-                            {post.title}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                          <p className="text-muted-foreground line-clamp-2 text-sm">
-                            {post.excerpt}
-                          </p>
-                        </CardContent>
-                        <CardFooter>
-                            <Button variant="outline" asChild className="w-full mt-auto">
-                                <LoadingLink href={`/blog/${post.slug}`}>
-                                    Read Article <ArrowRight className="ml-2 h-4 w-4" />
-                                </LoadingLink>
-                            </Button>
-                        </CardFooter>
-                    </LoadingLink>
-                </Card>
-              </motion.div>
-            )})}
+                <motion.div
+                  key={post.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="flex"
+                >
+                  <Card key={post.id} className={cn("overflow-hidden group card-glow-on-hover h-full flex flex-col")}>
+                    <div className="aspect-video relative">
+                      <LoadingLink href={`/blog/${post.slug}`} className="block flex flex-col h-full">
+                        {blogImage && <Image
+                          src={blogImage.imageUrl}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={blogImage.imageHint}
+                        />}
+                      </LoadingLink>
+                    </div>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>{post.date}</span>
+                        <span>&bull;</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
+                        {post.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground line-clamp-2 text-sm">
+                        {post.excerpt}
+                      </p>
+                    </CardContent>
+                    <CardFooter>
+                      <Button variant="outline" asChild className="w-full mt-auto">
+                        <LoadingLink href={`/blog/${post.slug}`}>
+                          Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                        </LoadingLink>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -384,63 +388,62 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-16 sm:py-24 bg-background">
         <div className="container mx-auto px-4">
-            <div className="relative rounded-lg bg-secondary/50 dark:bg-secondary/20 p-8 md:p-12 overflow-hidden">
-                <div className="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-                <div className="absolute -left-24 -bottom-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-                
-                <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-4 text-center md:text-left">
-                        <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
-                            Ready to Start Your Project?
-                        </h2>
-                        <p className="text-base text-muted-foreground max-w-md mx-auto md:mx-0">
-                            Let's talk about how Trionex Digital can help you achieve your
-                            goals. Schedule a free consultation today.
-                        </p>
-                        <motion.div
-                          animate={{
-                            scale: [1, 1.05, 1],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                          className="inline-block"
-                        >
-                            <Button
-                                size="lg"
-                                asChild
-                                className="shadow-lg shadow-primary/30"
-                            >
-                                <LoadingLink href="/contact">
-                                Schedule a meeting <ArrowRight className="ml-2 h-5 w-5" />
-                                </LoadingLink>
-                            </Button>
-                        </motion.div>
-                    </div>
-                    <div className="relative h-48 md:h-full flex items-center justify-center">
-                         <motion.div
-                            animate={{
-                                y: [-10, 10, -10],
-                            }}
-                            transition={{
-                                duration: 5,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                         >
-                            <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
-                        </motion.div>
-                    </div>
-                </div>
+          <div className="relative rounded-lg bg-secondary/50 dark:bg-secondary/20 p-8 md:p-12 overflow-hidden">
+            <div className="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="absolute -left-24 -bottom-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+
+            <div className="relative grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4 text-center md:text-left">
+                <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
+                  Ready to Start Your Project?
+                </h2>
+                <p className="text-base text-muted-foreground max-w-md mx-auto md:mx-0">
+                  Let's talk about how Trionex Digital can help you achieve your
+                  goals. Schedule a free consultation today.
+                </p>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="inline-block"
+                >
+                  <Button
+                    size="lg"
+                    asChild
+                    className="shadow-lg shadow-primary/30"
+                  >
+                    <LoadingLink href="/contact">
+                      Schedule a meeting <ArrowRight className="ml-2 h-5 w-5" />
+                    </LoadingLink>
+                  </Button>
+                </motion.div>
+              </div>
+              <div className="relative h-48 md:h-full flex items-center justify-center">
+                <motion.div
+                  animate={{
+                    y: [-10, 10, -10],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <MessageSquareQuote className="w-24 h-24 md:w-32 md:h-32 text-primary/20" />
+                </motion.div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
     </div>
   );
 }
 
-    
 
-    
+

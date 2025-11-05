@@ -11,15 +11,18 @@ import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import React from 'react';
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+
+  const { slug } = React.use(params); 
+  const post = blogPosts.find((s) => s.slug === slug);
 
   if (!post) {
     notFound();
   }
 
-  const otherPosts = blogPosts.filter((p) => p.slug !== params.slug).slice(0, 3);
+  const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
   const blogImage = placeholderImages.find(p => p.id === post.imageId);
   const authorAvatar = placeholderImages.find(p => p.id === post.author.avatarId);
 
@@ -28,17 +31,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Button variant="ghost" asChild className="mb-8">
-              <LoadingLink href="/blog">
-                  <ArrowLeft className="mr-2 h-4 w-4"/>
-                  Back to Blog
-              </LoadingLink>
+            <LoadingLink href="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Blog
+            </LoadingLink>
           </Button>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
           <div className="lg:col-span-2">
             {blogImage && (
-              <motion.div 
+              <motion.div
                 className="relative aspect-video rounded-lg overflow-hidden mb-8 shadow-lg"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -67,7 +70,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 ))}
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -75,8 +78,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               >
                 {post.title}
               </motion.h1>
-              
-              <motion.div 
+
+              <motion.div
                 className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-muted-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -95,26 +98,26 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
-                    <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4"/>
-                        <span className="text-sm">{post.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4"/>
-                        <span className="text-sm">{post.readTime}</span>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span className="text-sm">{post.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    <span className="text-sm">{post.readTime}</span>
+                  </div>
                 </div>
               </motion.div>
             </header>
 
-            <motion.div 
+            <motion.div
               className="prose prose-lg dark:prose-invert max-w-none mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <p className="lead">{post.excerpt}</p>
-              
+
               <h2>The Core Idea</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
@@ -138,7 +141,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </p>
             </motion.div>
           </div>
-          
+
           <aside className="lg:col-span-1 lg:sticky lg:top-24 h-min mt-12 lg:mt-0">
             <h3 className="font-headline text-2xl font-bold mb-6">Read More Articles</h3>
             <div className="space-y-6">
@@ -149,9 +152,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     <LoadingLink href={`/blog/${otherPost.slug}`} className="flex items-center gap-4">
                       {otherPostImage && (
                         <div className="relative w-24 h-24 flex-shrink-0">
-                          <Image 
-                            src={otherPostImage.imageUrl} 
-                            alt={otherPost.title} 
+                          <Image
+                            src={otherPostImage.imageUrl}
+                            alt={otherPost.title}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={otherPostImage.imageHint}

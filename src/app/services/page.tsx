@@ -56,69 +56,72 @@ export default function ServicesPage() {
               const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
               const Icon = serviceIcons[service.id] || Code;
               return (
-              <motion.div
-                key={service.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="h-full"
-              >
-                <Card
-                  className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
+                <motion.div
+                  key={service.id}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className="h-full"
                 >
-                  <Carousel 
-                      className="w-full" 
-                      plugins={[
-                        Autoplay({
-                          delay: 2000 + Math.random() * 1000,
-                          stopOnInteraction: true,
-                        }),
-                      ]}
-                      opts={{ loop: true }}
-                    >
-                    <CarouselContent>
-                        {serviceImages.length > 0 ? serviceImages.map((img, index) => (
+                  <Card
+                    className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
+                  >
+                    <LoadingLink href={`/services/${service.slug}`}>
+                      <Carousel
+                        className="w-full"
+                        plugins={[
+                          Autoplay({
+                            delay: 2000 + Math.random() * 1000,
+                            stopOnInteraction: true,
+                          }),
+                        ]}
+                        opts={{ loop: true }}
+                      >
+                        <CarouselContent>
+                          {serviceImages.length > 0 ? serviceImages.map((img, index) => (
                             <CarouselItem key={index}>
-                                <div className="aspect-video relative overflow-hidden">
+                              <div className="aspect-video relative overflow-hidden">
                                 <Image
-                                    src={img!.imageUrl}
-                                    alt={img!.description}
-                                    fill
-                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                    data-ai-hint={img!.imageHint}
+                                  src={img!.imageUrl}
+                                  alt={img!.description}
+                                  fill
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                  data-ai-hint={img!.imageHint}
                                 />
-                                </div>
+                              </div>
                             </CarouselItem>
-                        )) : (
-                              <CarouselItem>
-                                <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                  <Icon className="h-10 w-10 text-muted-foreground" />
-                                </div>
+                          )) : (
+                            <CarouselItem>
+                              <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                                <Icon className="h-10 w-10 text-muted-foreground" />
+                              </div>
                             </CarouselItem>
-                        )}
-                    </CarouselContent>
-                  </Carousel>
-                  <CardHeader className="items-center text-center">
-                    <CardTitle className="font-headline text-xl">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground mb-6 flex-grow text-sm text-center">
-                      {service.shortDescription}
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="outline" asChild className="w-full mt-auto">
+                          )}
+                        </CarouselContent>
+                      </Carousel>
+                    </LoadingLink>
+                    <CardHeader className="items-center text-center">
+                      <CardTitle className="font-headline text-xl">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p className="text-muted-foreground mb-6 flex-grow text-sm text-center">
+                        {service.shortDescription}
+                      </p>
+                    </CardContent>
+                    <CardFooter>
+                      <Button variant="outline" asChild className="w-full mt-auto">
                         <LoadingLink href={`/services/${service.slug}`}>
-                            View Details <ArrowRight className="ml-2 h-4 w-4" />
+                          View Details <ArrowRight className="ml-2 h-4 w-4" />
                         </LoadingLink>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            )})}
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              )
+            })}
           </div>
         </section>
 
@@ -128,21 +131,21 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {marketingServices.map((service, i) => {
               const serviceImages = service.imageIds.map(id => placeholderImages.find(p => p.id === id)).filter(Boolean);
-               const Icon = serviceIcons[service.id] || Code;
+              const Icon = serviceIcons[service.id] || Code;
               return (
-              <motion.div
+                <motion.div
                   key={service.id}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="h-full"
-              >
+                >
                   <Card
-                  className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
+                    className={cn("flex flex-col transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl h-full group overflow-hidden card-glow-on-hover")}
                   >
-                    <Carousel 
-                      className="w-full" 
+                    <Carousel
+                      className="w-full"
                       plugins={[
                         Autoplay({
                           delay: 2000 + Math.random() * 1000,
@@ -151,48 +154,49 @@ export default function ServicesPage() {
                       ]}
                       opts={{ loop: true }}
                     >
-                    <CarouselContent>
+                      <CarouselContent>
                         {serviceImages.length > 0 ? serviceImages.map((img, index) => (
-                            <CarouselItem key={index}>
-                                <div className="aspect-video relative overflow-hidden">
-                                <Image
-                                    src={img!.imageUrl}
-                                    alt={img!.description}
-                                    fill
-                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                    data-ai-hint={img!.imageHint}
-                                />
-                                </div>
-                            </CarouselItem>
+                          <CarouselItem key={index}>
+                            <div className="aspect-video relative overflow-hidden">
+                              <Image
+                                src={img!.imageUrl}
+                                alt={img!.description}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={img!.imageHint}
+                              />
+                            </div>
+                          </CarouselItem>
                         )) : (
-                            <CarouselItem>
-                                <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
-                                  <Icon className="h-10 w-10 text-muted-foreground" />
-                                </div>
-                            </CarouselItem>
+                          <CarouselItem>
+                            <div className="aspect-video relative overflow-hidden bg-secondary flex items-center justify-center">
+                              <Icon className="h-10 w-10 text-muted-foreground" />
+                            </div>
+                          </CarouselItem>
                         )}
-                    </CarouselContent>
-                  </Carousel>
+                      </CarouselContent>
+                    </Carousel>
                     <CardHeader className="items-center text-center">
                       <CardTitle className="font-headline text-xl">
-                      {service.title}
+                        {service.title}
                       </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
+                    </CardHeader>
+                    <CardContent className="flex-grow">
                       <p className="text-muted-foreground mb-6 flex-grow text-sm text-center">
-                      {service.shortDescription}
+                        {service.shortDescription}
                       </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button variant="outline" asChild className="w-full mt-auto">
+                    </CardContent>
+                    <CardFooter>
+                      <Button variant="outline" asChild className="w-full mt-auto">
                         <LoadingLink href={`/services/${service.slug}`}>
-                            View Details <ArrowRight className="ml-2 h-4 w-4" />
+                          View Details <ArrowRight className="ml-2 h-4 w-4" />
                         </LoadingLink>
-                    </Button>
-                  </CardFooter>
+                      </Button>
+                    </CardFooter>
                   </Card>
-              </motion.div>
-            )})}
+                </motion.div>
+              )
+            })}
           </div>
         </section>
 
@@ -201,4 +205,3 @@ export default function ServicesPage() {
   );
 }
 
-    

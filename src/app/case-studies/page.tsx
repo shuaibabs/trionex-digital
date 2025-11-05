@@ -24,7 +24,7 @@ const categoryIdToName: Record<string, string> = {
 
 export default function CaseStudiesPage() {
   const [filter, setFilter] = useState<string>('all');
-  
+
   const plugin = React.useRef(
     Autoplay({ delay: 2500, stopOnInteraction: true })
   )
@@ -39,7 +39,7 @@ export default function CaseStudiesPage() {
       }
       return acc;
     }, [] as { id: string; name: string }[]);
-    
+
     return [{ id: 'all', name: 'All' }, ...allCategories];
   }, []);
 
@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
     filter === 'all'
       ? caseStudies
       : caseStudies.filter((study) => study.categoryId === filter);
-      
+
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -92,61 +92,61 @@ export default function CaseStudiesPage() {
               >
                 <Card className={cn("overflow-hidden group flex flex-col h-full w-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover")}>
                   <LoadingLink href={`/case-studies/${study.slug}`} className="block h-full flex flex-col">
-                     <Carousel 
-                        className="w-full" 
-                        plugins={[
-                          Autoplay({
-                            delay: 2000 + Math.random() * 1000,
-                            stopOnInteraction: true,
-                          }),
-                        ]}
-                        opts={{ loop: true }}
-                      >
+                    <Carousel
+                      className="w-full"
+                      plugins={[
+                        Autoplay({
+                          delay: 2000 + Math.random() * 1000,
+                          stopOnInteraction: true,
+                        }),
+                      ]}
+                      opts={{ loop: true }}
+                    >
                       <CarouselContent>
-                          {study.preview.screenshots.length > 0 ? study.preview.screenshots.map((ss, index) => (
-                              <CarouselItem key={index}>
-                                  <div className="aspect-video relative overflow-hidden">
-                                  <Image
-                                      src={ss}
-                                      alt={`${study.locales.en.title} screenshot ${index + 1}`}
-                                      fill
-                                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                  />
-                                  </div>
-                              </CarouselItem>
-                          )) : (
-                               <CarouselItem>
-                                  <div className="aspect-video relative overflow-hidden">
-                                      <Image
-                                          src={study.img}
-                                          alt={study.locales.en.title}
-                                          fill
-                                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                      />
-                                  </div>
-                              </CarouselItem>
-                          )}
+                        {study.preview.screenshots.length > 0 ? study.preview.screenshots.map((ss, index) => (
+                          <CarouselItem key={index}>
+                            <div className="aspect-video relative overflow-hidden">
+                              <Image
+                                src={ss}
+                                alt={`${study.locales.en.title} screenshot ${index + 1}`}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                            </div>
+                          </CarouselItem>
+                        )) : (
+                          <CarouselItem>
+                            <div className="aspect-video relative overflow-hidden">
+                              <Image
+                                src={study.img}
+                                alt={study.locales.en.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
+                            </div>
+                          </CarouselItem>
+                        )}
                       </CarouselContent>
                     </Carousel>
-                    <CardHeader>
-                        <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
-                          {study.locales.en.title}
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className='flex-grow'>
-                      <div
-                        className="text-muted-foreground line-clamp-3 text-sm"
-                        dangerouslySetInnerHTML={{ __html: study.locales.en.text }}
-                      />
-                    </CardContent>
-                    <CardFooter>
-                        <Button variant="outline" asChild className="w-full mt-auto">
-                            <LoadingLink href={`/case-studies/${study.slug}`}>
-                                View Details <ArrowRight className="ml-2 h-4 w-4" />
-                            </LoadingLink>
-                        </Button>
-                    </CardFooter>
                   </LoadingLink>
+                  <CardHeader>
+                    <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">
+                      {study.locales.en.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className='flex-grow'>
+                    <div
+                      className="text-muted-foreground line-clamp-3 text-sm"
+                      dangerouslySetInnerHTML={{ __html: study.locales.en.text }}
+                    />
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full mt-auto">
+                      <LoadingLink href={`/case-studies/${study.slug}`}>
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </LoadingLink>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </motion.div>
             );

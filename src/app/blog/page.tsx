@@ -40,8 +40,8 @@ export default function BlogPage() {
                 className="flex"
               >
                 <Card className={cn("overflow-hidden group flex flex-col h-full w-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl card-glow-on-hover")}>
-                  <LoadingLink href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                     <div className="aspect-video relative">
+                  <LoadingLink href={`/blog/${post.slug}`} className="block h-full flex flex-col">
                       {blogImage && (
                         <Image
                           src={blogImage.imageUrl}
@@ -51,6 +51,7 @@ export default function BlogPage() {
                           data-ai-hint={blogImage.imageHint}
                         />
                       )}
+                      </LoadingLink>
                     </div>
                     <CardHeader>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -74,7 +75,6 @@ export default function BlogPage() {
                             </LoadingLink>
                         </Button>
                     </CardFooter>
-                  </LoadingLink>
                 </Card>
               </motion.div>
             );

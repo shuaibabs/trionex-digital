@@ -180,7 +180,7 @@ export default function FuturisticAnimation() {
 
                       left-[36%]           /* default (mobile) */
                       sm:left-[39%]        /* small screens ≥640px */
-                      md:left-[35%]        /* medium screens ≥768px */
+                      md:left-[39%]        /* medium screens ≥768px */
                       lg:left-[39%]        /* large screens ≥1024px */
                       xl:left-[39%]        /* extra-large screens ≥1280px */
                       w-32 h-32

@@ -3,12 +3,15 @@
 
 import { motion } from 'framer-motion';
 import Logo from './icons/logo';
+import FuturisticAnimation from './futuristic-animation';
 
 export default function GalaxyLoader() {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-background/80 backdrop-blur-sm">
       <div className="relative flex flex-col items-center justify-center">
         <Logo className="h-10 mb-8" />
+        <FuturisticAnimation />
+        <br></br>
         <div className="flex h-24 w-24 items-center justify-center">
           <motion.div
             className="absolute h-16 w-16 rounded-full border-2 border-primary/20"
@@ -38,9 +41,6 @@ export default function GalaxyLoader() {
             }}
           />
         </div>
-        <p className="mt-8 text-lg text-muted-foreground animate-pulse">
-          Loading...
-        </p>
       </div>
     </div>
   );

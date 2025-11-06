@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
@@ -47,7 +46,6 @@ export default function RootLayout({
         />
       </head>
       <body className={cn('animated-background font-body', inter.variable, spaceGrotesk.variable)}>
-        <FirebaseClientProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -79,7 +77,6 @@ export default function RootLayout({
             </Suspense>
             <CookieConsent />
           </ThemeProvider>
-        </FirebaseClientProvider>
       </body>
     </html>
   );

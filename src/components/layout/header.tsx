@@ -6,21 +6,21 @@ import { useState } from 'react';
 import LoadingLink from '@/components/loading-link';
 import { LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '../theme-toggle';
 import Logo from '../icons/logo';
-import { useUser } from '@/firebase';
-import { getAuth, signOut } from 'firebase/auth';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+// import { useUser } from '@/firebase';
+// import { getAuth, signOut } from 'firebase/auth';
+// import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuLabel,
+//   DropdownMenuSeparator,
+//   DropdownMenuTrigger,
+// } from '@/components/ui/dropdown-menu';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -35,46 +35,46 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user, isUserLoading } = useUser();
+  // const { user, isUserLoading } = useUser();
 
-  const handleLogout = async () => {
-    const auth = getAuth();
-    await signOut(auth);
-  };
+  // const handleLogout = async () => {
+  //   const auth = getAuth();
+  //   await signOut(auth);
+  // };
 
-  const getInitials = (email: string | null | undefined) => {
-    if (!email) return 'U';
-    return email.substring(0, 2).toUpperCase();
-  };
+  // const getInitials = (email: string | null | undefined) => {
+  //   if (!email) return 'U';
+  //   return email.substring(0, 2).toUpperCase();
+  // };
 
   return (
     <header className={cn('sticky top-0 z-50 w-full transition-all duration-300')}>
-        <div className="container mx-auto px-4">
-            <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
-                <LoadingLink href="/" className="mr-auto flex items-center">
-                  <Logo />
-                </LoadingLink>
+      <div className="container mx-auto px-4">
+        <div className="mt-2 flex h-16 items-center rounded-full border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60 px-4 shadow-lg sm:px-6">
+          <LoadingLink href="/" className="mr-auto flex items-center">
+            <Logo />
+          </LoadingLink>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium mx-auto">
-                {navLinks.map(({ href, label }) => (
-                    <LoadingLink
-                      key={href}
-                      href={href}
-                      className={cn(
-                          'transition-colors hover:text-primary nav-link-glow',
-                          pathname === href ? 'text-primary font-semibold' : 'text-foreground/60'
-                      )}
-                    >
-                    {label}
-                    </LoadingLink>
-                ))}
-                </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex lg:items-center lg:gap-6 text-sm font-medium mx-auto">
+            {navLinks.map(({ href, label }) => (
+              <LoadingLink
+                key={href}
+                href={href}
+                className={cn(
+                  'transition-colors hover:text-primary nav-link-glow',
+                  pathname === href ? 'text-primary font-semibold' : 'text-foreground/60'
+                )}
+              >
+                {label}
+              </LoadingLink>
+            ))}
+          </nav>
 
-                <div className="flex items-center justify-end gap-2 ml-auto">
-                    <ThemeToggle />
+          <div className="flex items-center justify-end gap-2 ml-auto">
+            <ThemeToggle />
 
-                    {!isUserLoading && (
+            {/* {!isUserLoading && (
                       <>
                         {user ? (
                            <DropdownMenu>
@@ -119,42 +119,43 @@ export default function Header() {
                           </div>
                         )}
                       </>
-                    )}
+                    )} */}
 
-                  {/* Mobile & Tablet Navigation Menu */}
-                  <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                      <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon" className="lg:hidden">
-                          <Menu />
-                          <span className="sr-only">Open menu</span>
-                      </Button>
-                      </SheetTrigger>
-                      <SheetContent side="left">
-                      <div className="flex flex-col h-full">
-                          <div className="flex items-center justify-between border-b pb-4">
-                          <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
-                              <Logo />
+            {/* Mobile & Tablet Navigation Menu */}
+            <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="lg:hidden">
+                  <Menu />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="top">
+                <SheetHeader><SheetTitle></SheetTitle><SheetDescription></SheetDescription></SheetHeader>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center justify-between border-b pb-4">
+                    <LoadingLink href="/" onClick={() => setMobileMenuOpen(false)}>
+                      <Logo />
+                    </LoadingLink>
+                  </div>
+                  <nav className="flex-grow mt-6">
+                    <ul className="space-y-4">
+                      {navLinks.map(({ href, label }) => (
+                        <li key={href}>
+                          <LoadingLink
+                            href={href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={cn(
+                              'text-lg font-medium transition-colors hover:text-primary',
+                              pathname === href ? 'text-primary' : 'text-foreground'
+                            )}
+                          >
+                            {label}
                           </LoadingLink>
-                          </div>
-                          <nav className="flex-grow mt-6">
-                          <ul className="space-y-4">
-                              {navLinks.map(({ href, label }) => (
-                              <li key={href}>
-                                  <LoadingLink
-                                  href={href}
-                                  onClick={() => setMobileMenuOpen(false)}
-                                  className={cn(
-                                      'text-lg font-medium transition-colors hover:text-primary',
-                                      pathname === href ? 'text-primary' : 'text-foreground'
-                                  )}
-                                  >
-                                  {label}
-                                  </LoadingLink>
-                              </li>
-                              ))}
-                          </ul>
-                          </nav>
-                          <div className="border-t pt-4">
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                  {/* <div className="border-t pt-4">
                           {user ? (
                             // Logged in user in mobile sheet
                               <div className="flex flex-col gap-4">
@@ -180,13 +181,13 @@ export default function Header() {
                                 </Button>
                               </div>
                           )}
-                          </div>
-                      </div>
-                      </SheetContent>
-                  </Sheet>
+                          </div> */}
                 </div>
-            </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
+      </div>
     </header>
   );
 }

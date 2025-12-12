@@ -1,0 +1,10 @@
+{
+  "clientsImages": [
+    {
+      "id": "client-logo-1",
+      "description": "Generic tech company logo",
+      "imageUrl": "",
+      "imageHint": "tech logo"
+    }
+  ]
+}

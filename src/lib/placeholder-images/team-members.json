@@ -1,0 +1,28 @@
+{
+    "teamMembersImages": [
+        {
+            "id": "avatar-1",
+            "description": "Shuiab Abbasi Image",
+            "imageUrl": "/assets/images/team-members/shuaib-abbasi.png",
+            "imageHint": "Shuaib Abbasi Image"
+        },
+        {
+            "id": "avatar-2",
+            "description": "Vishal Raj Image",
+            "imageUrl": "/assets/images/team-members/vishal-raj.png",
+            "imageHint": "Vishal Raj Image"
+        },
+        {
+            "id": "avatar-3",
+            "description": "sahil Image",
+            "imageUrl": "/assets/images/team-members/sahil.png",
+            "imageHint": "sahil Image"
+        },
+        {
+            "id": "avatar-4",
+            "description": "Sumit Sharma Image",
+            "imageUrl": "/assets/images/team-members/sumit-sharma.png",
+            "imageHint": "Sumit Sharma Image"
+        }
+    ]
+}

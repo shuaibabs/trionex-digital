@@ -1,0 +1,22 @@
+{
+  "aboutImages": [
+    {
+      "id": "about-hero",
+      "description": "Team of diverse professionals in a meeting",
+      "imageUrl": "/assets/images/about/about-hero.jpg",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "story-dark",
+      "description": "Two people working together in a creative startup environment",
+      "imageUrl": "/assets/images/about/story-dark.png",
+      "imageHint": "startup meeting"
+    },
+    {
+      "id": "story-light",
+      "description": "Two people working together in a creative startup environment",
+      "imageUrl": "/assets/images/about/story-light.png",
+      "imageHint": "startup meeting"
+    }
+  ]
+}

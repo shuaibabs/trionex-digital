@@ -1,0 +1,35 @@
+{
+  "testimonialsImages": [
+    {
+
+      "id": "avatar-testimonial-1",
+      "description": "Portrait of a confident marketing executive woman",
+      "imageUrl": "/assets/images/testimonials/rohan.png",
+      "imageHint": "marketing executive"
+    },
+    {
+      "id": "avatar-testimonial-2",
+      "description": "Portrait of a professional man in a suit",
+      "imageUrl": "/assets/images/testimonials/priya.png",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "avatar-testimonial-3",
+      "description": "Headshot of a male software engineer",
+      "imageUrl": "/assets/images/testimonials/ankit.png",
+      "imageHint": "software engineer"
+    },
+    {
+      "id": "avatar-testimonial-4",
+      "description": "Headshot of a female entrepreneur",
+      "imageUrl": "/assets/images/testimonials/sameer.png",
+      "imageHint": "female entrepreneur"
+    },
+    {
+      "id": "avatar-testimonial-5",
+      "description": "Friendly portrait of a male business owner",
+      "imageUrl": "/assets/images/testimonials/neha.png",
+      "imageHint": "business owner"
+    }
+  ]
+}
